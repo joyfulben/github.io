@@ -13,16 +13,16 @@ $(() => {
       console.log('Bad request');
     }
   )
-  // $.ajax({
-  //   url:'https://api.spoonacular.com/recipes/763716/information?apiKey=a69a37e97ec54198ad3e9025f3f83e3d'
-  // }).then (
-  //   (data) => {
-  //     console.log(data);
-  //   },() => {
-  //     console.log('Bad request');
-  //   }
-  // )
-  //
+  $.ajax({
+    url:'https://api.spoonacular.com/recipes/763716/information?apiKey=a69a37e97ec54198ad3e9025f3f83e3d'
+  }).then (
+    (data) => {
+      console.log(data);
+    },() => {
+      console.log('Bad request');
+    }
+  )
+
 
 })
 
