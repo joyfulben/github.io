@@ -6,7 +6,8 @@ $(() => {
   }).then (
     (data) => {
       for (let i = 0; i < data.results.length; i++) {
-        console.log(data.results[i].id)
+        idArr.push(data.results[i].id)
+        console.log(idArr);
       }
 // TODO: once access, save recipe id in variable and use in following ajax request
 
