@@ -12,9 +12,18 @@ let idArr = []
 //==========Functions===============//
 //==================================//
 // TODO: Create a function that when filters button is pushed, four buttons appear in its place, each with one of the four filters
+const chooseFilter = () => {
+  const $inputBox = $(`<div><input type="text"><div>`)
+  $inputBox.appendTo(event.target)
+
+}
+
 const filtersClick = () => {
   $('#options').on('click', () => {
     $('.filters').toggleClass('filters')
+    $('.see-me').one('click', () => {
+      chooseFilter(event)
+    })
   })
 }
 
