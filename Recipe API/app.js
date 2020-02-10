@@ -9,13 +9,16 @@ let diet = []
 let exceptions = []
 let intolerances = []
 let idArr = []
+let dataArr = []
 //==================================//
 //==========Functions===============//
 //==================================//
 // TODO: Create a function that when filters button is pushed, four buttons appear in its place, each with one of the four filters
 // TODO: Take filter arrays and input them into ajaxIDRecipe
 
-
+//====================================
+//===========Filters==================
+//====================================
 //When a filter is chosen, a submit box with button is appended to original target filter button. The new submit button, recently appended to the target filter will push input to its respective array.
 const chooseFilter = () => {
   const $target = event.target;
@@ -29,16 +32,16 @@ const chooseFilter = () => {
   const $filter = $($target).text();
   $('form').on('submit', () => {
     event.preventDefault()
-      if ($filter == 'Cuisine') {
-        cuisine.push($($inputBox).val())
-      } else if ($filter == 'Diet') {
-        diet.push($($inputBox).val())
-      } else if ($filter == 'Exclude Ingredients') {
-        exceptions.push($($inputBox).val())
-      } else {
-        intolerances.push($($inputBox).val())
-      }
-      $($inputBox).val('')
+    if ($filter == 'Cuisine') {
+      cuisine.push($($inputBox).val())
+    } else if ($filter == 'Diet') {
+      diet.push($($inputBox).val())
+    } else if ($filter == 'Exclude Ingredients') {
+      exceptions.push($($inputBox).val())
+    } else {
+      intolerances.push($($inputBox).val())
+    }
+    $($inputBox).val('')
   })
 }
 
@@ -50,6 +53,20 @@ const filtersClick = () => {
     })
   })
 }
+//===========================================
+//=============Recipe Divs===================
+//===========================================
+
+const showRecipe = () => {
+    const $recipeDiv = $('<div>').addClass('search-result')
+    const $recipeName = $(`<h2></h2>`).text(`${dataArr[dataArr.length-1].title}`)
+    $recipeDiv.append($recipeName);
+    $('.recipe-container').append($recipeDiv)
+
+}
+//===========================================
+// ==================AJAX====================
+//===========================================
 
 // ajax request to use the idea acquired from previous ajax request
 const ajaxUseID = () => {
@@ -58,26 +75,19 @@ const ajaxUseID = () => {
       url:'https://api.spoonacular.com/recipes/'+idArr[j]+'/information?apiKey=a69a37e97ec54198ad3e9025f3f83e3d'
     }).then (
       (data) => {
-        console.log(data.title);
-
+        dataArr.push(data);
+        showRecipe();
       },() => {
         console.log('Bad request');
       }
+
     )
+
   }
+
   $('.see-me').remove()
 }
 // TODO: Set multiple variables that will take filters: cuisine, diet, excludeIngredients and intolerances to be added to ajaxIDRecipe in addition to query.
-
-//===========Submitting number of queries displayed============
-// const numberSubmit = () => {
-//   $('#number').on('submit', (event) => {
-//     event.preventDefault();
-//     console.log($('input[type=\'text\']').val());
-//   //   $('input[type=\'text\']').val('')
-//   })
-// }
-//=====================================================
 
 // ajax request for basic recipe info using a user generated query w/ or w/o filters
 const ajaxIDRecipe = () => {
@@ -98,9 +108,12 @@ const ajaxIDRecipe = () => {
           idArr.push(data.results[i].id);
         }
       ajaxUseID();
+
+
       },() => {
         console.log('Bad request');
       })
+
     query = []
     idArr = []
   })
