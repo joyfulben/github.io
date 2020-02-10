@@ -12,24 +12,44 @@ let idArr = []
 //==========Functions===============//
 //==================================//
 // TODO: Create a function that when filters button is pushed, four buttons appear in its place, each with one of the four filters
+const inputFilterInputs = () => {
+
+
+
+}
+const inputFilter = () => {
+  event.preventDefault();
+  console.log($filter);
+  pushInputToFilterArr();
+  console.log(cuisine);
+  $($inputBox).val('')
+}
 const chooseFilter = () => {
   const $target = event.target;
   const $form = $('<form>')
   const $inputBox = $(`<input type="text"/>`)
-  const $button = $('<input type="submit" value="Submit"/>').addClass('button');
-
+  const $button = $('<input type="submit" value="Submit"/>')
+  .addClass('button');
   $inputBox.appendTo($form)
   $button.appendTo($form)
   $form.appendTo($target)
   const $filter = $($target).text();
   $('form').on('submit', () => {
-    event.preventDefault();
-    console.log($($inputBox).val());
-    $($inputBox).val('')
+    event.preventDefault()
+      if ($filter == 'Cuisine') {
+        cuisine.push($($inputBox).val())
+      } else if ($filter == 'Diet') {
+        diet.push($($inputBox).val())
+      } else if ($filter == 'Exclude Ingredients') {
+        exceptions.push($($inputBox).val())
+      } else {
+        intolerances.push($($inputBox).val())
+      }
+
+      console.log(cuisine);
   })
-
-
 }
+
 const submitFilter = () => {
   if ($filter == 'Cuisine') {
     cuisineArr.push
