@@ -8,3 +8,7 @@
 .filters {
   display: none;
 }
+.button {
+  height: 10px;
+  width: 100px;
+}

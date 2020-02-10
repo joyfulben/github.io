@@ -13,16 +13,34 @@ let idArr = []
 //==================================//
 // TODO: Create a function that when filters button is pushed, four buttons appear in its place, each with one of the four filters
 const chooseFilter = () => {
-  const $inputBox = $(`<div><input type="text"><div>`)
-  $inputBox.appendTo(event.target)
+  const $target = event.target;
+  const $form = $('<form>')
+  const $inputBox = $(`<input type="text"/>`)
+  const $button = $('<input type="submit" value="Submit"/>').addClass('button');
+
+  $inputBox.appendTo($form)
+  $button.appendTo($form)
+  $form.appendTo($target)
+  const $filter = $($target).text();
+  $('form').on('submit', () => {
+    event.preventDefault();
+    console.log($($inputBox).val());
+    $($inputBox).val('')
+  })
+
 
 }
-
+const submitFilter = () => {
+  if ($filter == 'Cuisine') {
+    cuisineArr.push
+  }
+}
 const filtersClick = () => {
   $('#options').on('click', () => {
     $('.filters').toggleClass('filters')
     $('.see-me').one('click', () => {
       chooseFilter(event)
+
     })
   })
 }
