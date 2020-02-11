@@ -89,7 +89,7 @@ const ajaxUseID = () => {
       }
     )
   }
-
+  idArr = []
   $('.see-me').remove()
 }
 // TODO: Set multiple variables that will take filters: cuisine, diet, excludeIngredients and intolerances to be added to ajaxIDRecipe in addition to query.
