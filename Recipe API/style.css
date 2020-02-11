@@ -1,7 +1,44 @@
 * {
   box-sizing: border-box;
 }
+.background {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('https://images.squarespace-cdn.com/content/v1/54b3f75ee4b0cdf625ece0b0/1453333783970-E3Z5T5I9TXH4DVVXSYCG/ke17ZwdGBToddI8pDm48kIIp8K2K7mKd2QvtFJuOlKl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UdN6KFoLWn9QaHckewyL7Sw4itDZuqMtZw1wlm5gIBoBEObttv2dstUvyPf07O3izQ/market+basket+blueberries+radishes+cropped.jpg?format=2500w');
+  background-repeat: repeat;
+  background-size: cover;
+  opacity: 0.4;
+}
 
+header {
+  text-align: center;
+}
+header h1 {
+  font-size: 80px
+}
+#options {
+  height: 30px;
+  width: 80px;
+  border-radius: 10px;
+  box-shadow: 4px 2px rgba(134, 134, 134, 0.71)
+}
+#options:hover {
+  background-image: radial-gradient(rgba(207, 59, 125, 0.56),rgba(205, 197, 4, 0.7));
+}
+#input-box {
+  height: 30px;
+  width: 240px;
+  border-radius: 5px;
+}
+#input-btn {
+  height: 30px;
+  width: 80px;
+  border-radius: 10px;
+  box-shadow: 4px 2px rgba(134, 134, 134, 0.71)
+}
+#input-btn:hover {
+  background-image: radial-gradient(rgba(0, 6, 82, 0.45),rgba(201, 6, 13, 0.45));
+}
 .see-me {
   display: block;
 }
