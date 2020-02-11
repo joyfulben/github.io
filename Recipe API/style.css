@@ -12,3 +12,6 @@
   height: 10px;
   width: 100px;
 }
+h2:hover {
+  cursor: pointer;
+}

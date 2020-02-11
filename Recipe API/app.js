@@ -3,7 +3,7 @@
 //===========Array variables========//
 //==================================//
 let query = []
-let number = [2]
+let number = [5]
 let cuisine = []
 let diet = []
 let exceptions = []
