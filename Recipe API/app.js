@@ -60,6 +60,13 @@ const filtersClick = () => {
 const showRecipe = () => {
     const $recipeDiv = $('<div>').addClass('search-result')
     const $recipeName = $(`<h2></h2>`).text(`${dataArr[dataArr.length-1].title}`)
+    const $recipeInstructions = $('<h6></h6>')
+    .addClass('filters')
+    .text(`${dataArr[dataArr.length-1].instructions}`)
+    $recipeName.on('click', () => {
+      $recipeInstructions.toggleClass('filters')
+    })
+    $recipeInstructions.appendTo($recipeName)
     $recipeDiv.append($recipeName);
     $('.recipe-container').append($recipeDiv)
 
@@ -80,9 +87,7 @@ const ajaxUseID = () => {
       },() => {
         console.log('Bad request');
       }
-
     )
-
   }
 
   $('.see-me').remove()
