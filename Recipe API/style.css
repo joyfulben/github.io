@@ -1,20 +1,35 @@
 * {
   box-sizing: border-box;
 }
+body {
+  padding: 0;
+  margin: 0;
+}
 .background {
+  margin-top: 60px;
   width: 100vw;
   height: 100vh;
   background-image: url('https://images.squarespace-cdn.com/content/v1/54b3f75ee4b0cdf625ece0b0/1453333783970-E3Z5T5I9TXH4DVVXSYCG/ke17ZwdGBToddI8pDm48kIIp8K2K7mKd2QvtFJuOlKl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UdN6KFoLWn9QaHckewyL7Sw4itDZuqMtZw1wlm5gIBoBEObttv2dstUvyPf07O3izQ/market+basket+blueberries+radishes+cropped.jpg?format=2500w');
   background-repeat: repeat;
   background-size: cover;
-  opacity: 0.4;
+  filter: url('https://images.squarespace-cdn.com/content/v1/54b3f75ee4b0cdf625ece0b0/1453333783970-E3Z5T5I9TXH4DVVXSYCG/ke17ZwdGBToddI8pDm48kIIp8K2K7mKd2QvtFJuOlKl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UdN6KFoLWn9QaHckewyL7Sw4itDZuqMtZw1wlm5gIBoBEObttv2dstUvyPf07O3izQ/market+basket+blueberries+radishes+cropped.jpg?format=2500w');
+  z-index: 0;
 }
 
 header {
   text-align: center;
+  background-color: rgba(133, 11, 144, 0.25);
+  width: 100vw;
+  height: 300px;
+  position: relative;
+
 }
 header h1 {
-  font-size: 80px
+  font-size: 90px;
+  color: rgb(135, 0, 0);
+  font-family: 'Lobster', cursive;
+  text-shadow: 4px 2px rgba(177, 3, 160, 0.4)
+
 }
 #options {
   height: 30px;
@@ -29,18 +44,32 @@ header h1 {
   height: 30px;
   width: 240px;
   border-radius: 5px;
+  background-color: rgba(226, 151, 6, 0.4)
 }
 #input-btn {
+
   height: 30px;
   width: 80px;
   border-radius: 10px;
-  box-shadow: 4px 2px rgba(134, 134, 134, 0.71)
+  box-shadow: 4px 2px rgba(134, 134, 134, 0.71);
+  font-weight: bold;
+  margin: 20px;
 }
 #input-btn:hover {
-  background-image: radial-gradient(rgba(0, 6, 82, 0.45),rgba(201, 6, 13, 0.45));
+  background-image: radial-gradient(rgba(39, 177, 74, 0.59),rgba(201, 6, 13, 0.45));
+}
+.filter-btns {
+  display: flex;
+  justify-content: space-around;
 }
 .see-me {
   display: block;
+  width: 160px;
+  border: 3px solid rgba(0, 147, 19, 0.39);
+  border-radius: 10px;
+}
+.see-me:hover {
+  background-color: rgba(224, 200, 36, 0.47);
 }
 .filters {
   display: none;
@@ -51,4 +80,14 @@ header h1 {
 }
 h2:hover {
   cursor: pointer;
+}
+.search-result {
+  border: 3px solid rgba(240, 158, 0, 0.4)
+  float: left;
+  position: relative;
+  left: 20px;
+  z-index: 1000;
+  background-color: rgba(176, 176, 176, 0.64);
+  padding: 5px;
+  font-weight: bold;
 }

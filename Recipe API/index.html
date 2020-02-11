@@ -8,23 +8,26 @@
       crossorigin="anonymous"></script>
     <script type="text/javascript" src="app.js"></script>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
     <title>Recipe App</title>
   </head>
-  <header>
-    <h1>My Recipes</h1>
-    <form id="recipe">
+  <div class='header-pic'>
+    <header>
+      <h1>My Recipes</h1>
+      <form id="recipe">
 
-      <input type="text" id="input-box" placeholder="pie, stew, quiche"/>
-      <input type="submit" id="input-btn" value='Submit'/>
-    </form>
-    <div class="filter-btns">
-      <button type="button" id="options">Filters</button>
-      <button type="button" class="see-me filters" id="cuisine">Cuisine</button>
-      <button type="button" class="see-me filters" id="diet">Diet</button>
-      <button type="button" class="see-me filters" id="ingredients">Exclude Ingredients</button>
-      <button type="button" class="see-me filters" id="intolerances">Intolerances</button>
-    </div>
-  </header>
+        <input type="text" id="input-box" placeholder="pie, stew, quiche"/>
+        <input type="submit" id="input-btn" value='Submit'/>
+      </form>
+      <div class="filter-btns">
+        <button type="button" id="options">Filters</button>
+        <button type="button" class="see-me filters" id="cuisine">Cuisine</button>
+        <button type="button" class="see-me filters" id="diet">Diet</button>
+        <button type="button" class="see-me filters" id="ingredients">Exclude Ingredients</button>
+        <button type="button" class="see-me filters" id="intolerances">Intolerances</button>
+      </div>
+    </header>
+  </div>
   <body>
     <div class="background">
       <div class="recipe-container">
