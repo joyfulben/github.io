@@ -1,16 +1,24 @@
 * {
   box-sizing: border-box;
 }
+html {
+  background-image: url('https://www.gallienoteca.com/pub/media/wysiwyg/blog/zalto/zalto1.jpg');
+  background-size: cover;
+  background-position: bottom;
+
+
+}
 body {
   padding: 0;
   margin: 0;
 }
 .background {
   margin-top: 60px;
+  margin-bottom: 0;
   width: 100vw;
   height: 100vh;
   background-image: url('https://images.squarespace-cdn.com/content/v1/54b3f75ee4b0cdf625ece0b0/1453333783970-E3Z5T5I9TXH4DVVXSYCG/ke17ZwdGBToddI8pDm48kIIp8K2K7mKd2QvtFJuOlKl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UdN6KFoLWn9QaHckewyL7Sw4itDZuqMtZw1wlm5gIBoBEObttv2dstUvyPf07O3izQ/market+basket+blueberries+radishes+cropped.jpg?format=2500w');
-  background-repeat: repeat;
+  background-repeat: repeat-y;
   background-size: cover;
   filter: url('https://images.squarespace-cdn.com/content/v1/54b3f75ee4b0cdf625ece0b0/1453333783970-E3Z5T5I9TXH4DVVXSYCG/ke17ZwdGBToddI8pDm48kIIp8K2K7mKd2QvtFJuOlKl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UdN6KFoLWn9QaHckewyL7Sw4itDZuqMtZw1wlm5gIBoBEObttv2dstUvyPf07O3izQ/market+basket+blueberries+radishes+cropped.jpg?format=2500w');
   z-index: 0;
@@ -18,15 +26,15 @@ body {
 
 header {
   text-align: center;
-  background-color: rgba(133, 11, 144, 0.25);
+  background-color: rgba(116, 0, 0, 0.6);
   width: 100vw;
   height: 300px;
   position: relative;
-
+  border-radius: 300px;
 }
 header h1 {
   font-size: 90px;
-  color: rgb(135, 0, 0);
+  color: rgb(252, 166, 52);
   font-family: 'Lobster', cursive;
   text-shadow: 4px 2px rgba(177, 3, 160, 0.4)
 
@@ -40,11 +48,19 @@ header h1 {
 #options:hover {
   background-image: radial-gradient(rgba(207, 59, 125, 0.56),rgba(205, 197, 4, 0.7));
 }
+.tooltip {
+  background-color: rgba(227, 246, 202, 0.74);
+  width: 120px;
+  margin-left: 80px;
+  padding: 5px;
+  border-style: ridge;
+
+}
 #input-box {
   height: 30px;
   width: 240px;
   border-radius: 5px;
-  background-color: rgba(226, 151, 6, 0.4)
+  background-color: rgba(244, 228, 86, 0.65)
 }
 #input-btn {
 
@@ -56,7 +72,7 @@ header h1 {
   margin: 20px;
 }
 #input-btn:hover {
-  background-image: radial-gradient(rgba(39, 177, 74, 0.59),rgba(201, 6, 13, 0.45));
+  background-image: radial-gradient(rgba(39, 177, 74, 0.59),rgba(205, 197, 4, 0.7));
 }
 .filter-btns {
   display: flex;
@@ -78,16 +94,36 @@ header h1 {
   height: 10px;
   width: 100px;
 }
+h2 {
+  color: rgb(72, 22, 80);
+  font-size: 35px;
+}
 h2:hover {
   cursor: pointer;
+  font-family: 'Fredoka One', cursive;
+}
+h6 {
+  font-family: 'Vidaloka', serif;
+  font-size: 20px;
+  margin: 0 10%;
+  text-align: center;
 }
 .search-result {
   border: 3px solid rgba(240, 158, 0, 0.4);
-  float: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  color:rgb(196, 136, 2)
   position: relative;
   left: 20px;
   z-index: 1000;
-  background-color: rgba(176, 176, 176, 0.75);
+  background-color: rgba(176, 176, 176, 0.85);
   padding: 5px;
   font-weight: bold;
+
+  margin: 20px auto;
+}
+button {
+  font-family: Arial;
 }

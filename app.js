@@ -17,7 +17,7 @@ let dataArr = []
 // TODO: Take filter arrays and input them into ajaxIDRecipe
 
 //====================================
-//===========Filters==================
+//            Filters
 //====================================
 //When a filter is chosen, a submit box with button is appended to original target filter button. The new submit button, recently appended to the target filter will push input to its respective array.
 const chooseFilter = () => {
@@ -46,6 +46,12 @@ const chooseFilter = () => {
 }
 
 const filtersClick = () => {
+  $('#options').one('mouseenter', () => {
+    $tooltip = $('<div>').text('Add a filter to your search').addClass('tooltip')
+    $tooltip.appendTo($('#options'))
+    $tooltip.delay(5000).fadeOut();
+  })
+
   $('#options').on('click', () => {
     $('.filters').toggleClass('filters')
     $('.see-me').one('click', () => {
@@ -61,15 +67,14 @@ const showRecipe = () => {
     const $recipeDiv = $('<div>').addClass('search-result')
     const $recipeName = $(`<h2></h2>`).text(`${dataArr[dataArr.length-1].title}`)
     const $recipeInstructions = $('<h6></h6>')
-    .addClass('filters')
-    .text(`${dataArr[dataArr.length-1].instructions}`)
+    .addClass('filters').text(`${dataArr[dataArr.length-1].instructions}`)
+
     $recipeName.on('click', () => {
       $recipeInstructions.toggleClass('filters')
     })
     $recipeInstructions.appendTo($recipeName)
     $recipeDiv.append($recipeName);
     $('.recipe-container').append($recipeDiv)
-
 }
 //===========================================
 // ==================AJAX====================
@@ -126,7 +131,6 @@ const ajaxIDRecipe = () => {
 
 //jquery on-load ready function
 $(() => {
-
   filtersClick()
   ajaxIDRecipe()
 
