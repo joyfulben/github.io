@@ -109,7 +109,7 @@ const ajaxIDRecipe = () => {
     query.push($('input[type=\'text\']').val())
     //Reset input box by having its value be an empty string
   $('input[type=\'text\']').val('');
-  //====================================================
+  
     $.ajax({
       url:'https://api.spoonacular.com/recipes/search?query='+query[0]+ '&cuisine='+cuisine+'&diet='+diet+'&excludeIngredients='+exceptions+'&intolerances='+intolerances+ '&number='+number+'&apiKey=a69a37e97ec54198ad3e9025f3f83e3d'
     }).then (
