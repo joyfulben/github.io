@@ -124,6 +124,11 @@ h6 {
 
   margin: 20px auto;
 }
-button {
+.remove-button {
   font-family: Arial;
+  width: 20px;
+  height: 20px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  text-align: center;
 }

@@ -64,11 +64,17 @@ const filtersClick = () => {
 //===========================================
 
 const showRecipe = () => {
+    //Jquery variables being made
     const $recipeDiv = $('<div>').addClass('search-result')
     const $recipeName = $(`<h2></h2>`).text(`${dataArr[dataArr.length-1].title}`)
     const $recipeInstructions = $('<h6></h6>')
     .addClass('filters').text(`${dataArr[dataArr.length-1].instructions}`)
-
+    const $removeButton = $('<button></button>').addClass('remove-button').text('X')
+    //Setting on on click function to remove the parent div that contains the remove button
+    $removeButton.on('click', (event) => {
+      $(event.target).parent().remove()
+    })
+    $removeButton.appendTo($recipeDiv)
     $recipeName.on('click', () => {
       $recipeInstructions.toggleClass('filters')
     })
@@ -109,7 +115,7 @@ const ajaxIDRecipe = () => {
     query.push($('input[type=\'text\']').val())
     //Reset input box by having its value be an empty string
   $('input[type=\'text\']').val('');
-  
+
     $.ajax({
       url:'https://api.spoonacular.com/recipes/search?query='+query[0]+ '&cuisine='+cuisine+'&diet='+diet+'&excludeIngredients='+exceptions+'&intolerances='+intolerances+ '&number='+number+'&apiKey=a69a37e97ec54198ad3e9025f3f83e3d'
     }).then (
