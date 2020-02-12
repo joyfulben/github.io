@@ -65,21 +65,37 @@ const filtersClick = () => {
 
 const showRecipe = () => {
     //Jquery variables being made
-    const $recipeDiv = $('<div>').addClass('search-result')
-    const $recipeName = $(`<h2></h2>`).text(`${dataArr[dataArr.length-1].title}`)
+    const $recipeDiv = $('<div>')
+    .addClass('search-result')
+    const $recipeName = $(`<h2></h2>`)
+    .text(`${dataArr[dataArr.length-1].title}`)
     const $recipeInstructions = $('<h6></h6>')
-    .addClass('filters').text(`${dataArr[dataArr.length-1].instructions}`)
-    const $removeButton = $('<button></button>').addClass('remove-button').text('X')
-    //Setting on on click function to remove the parent div that contains the remove button
+    .addClass('filters')
+    .text(`${dataArr[dataArr.length-1].instructions}`)
+    const $removeButton = $('<button></button>')
+    .addClass('remove-button').text('X')
+    const $pic = $('<img>')
+    .addClass('recipe-image')
+    .attr(`src`, `${dataArr[dataArr.length-1].image}`)
+    .attr('height', '15%')
+    .attr('width', '20%')
+
+    //Setting on click function to remove the parent div that contains the remove button
     $removeButton.on('click', (event) => {
       $(event.target).parent().remove()
     })
     $removeButton.appendTo($recipeDiv)
+
+    //Setting on click function to toggle the class that has a display property of none
     $recipeName.on('click', () => {
       $recipeInstructions.toggleClass('filters')
     })
-    $recipeInstructions.appendTo($recipeName)
+    $pic.on('click', () => {
+      $recipeInstructions.toggleClass('filters')
+    })
     $recipeDiv.append($recipeName);
+    $pic.appendTo($recipeDiv)
+    $recipeInstructions.appendTo($recipeDiv)
     $('.recipe-container').append($recipeDiv)
 }
 //===========================================

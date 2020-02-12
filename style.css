@@ -20,8 +20,6 @@ body {
   background-image: url('https://images.squarespace-cdn.com/content/v1/54b3f75ee4b0cdf625ece0b0/1453333783970-E3Z5T5I9TXH4DVVXSYCG/ke17ZwdGBToddI8pDm48kIIp8K2K7mKd2QvtFJuOlKl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UdN6KFoLWn9QaHckewyL7Sw4itDZuqMtZw1wlm5gIBoBEObttv2dstUvyPf07O3izQ/market+basket+blueberries+radishes+cropped.jpg?format=2500w');
   background-repeat: repeat-y;
   background-size: cover;
-  filter: url('https://images.squarespace-cdn.com/content/v1/54b3f75ee4b0cdf625ece0b0/1453333783970-E3Z5T5I9TXH4DVVXSYCG/ke17ZwdGBToddI8pDm48kIIp8K2K7mKd2QvtFJuOlKl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UdN6KFoLWn9QaHckewyL7Sw4itDZuqMtZw1wlm5gIBoBEObttv2dstUvyPf07O3izQ/market+basket+blueberries+radishes+cropped.jpg?format=2500w');
-  z-index: 0;
 }
 
 header {
@@ -121,8 +119,13 @@ h6 {
   background-color: rgba(176, 176, 176, 0.85);
   padding: 5px;
   font-weight: bold;
-
   margin: 20px auto;
+}
+.recipe-image {
+  margin: 1% auto;
+}
+.recipe-image:hover {
+  cursor: pointer;
 }
 .remove-button {
   font-family: Arial;
@@ -131,4 +134,7 @@ h6 {
   background-color: rgb(0, 0, 0);
   color: white;
   text-align: center;
+}
+.remove-button:hover {
+  background-color: red;
 }
